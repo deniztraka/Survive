@@ -90,6 +90,7 @@ NuhMapHandler.Builder = (function (my, parent) {
     var forestGroup = null;
     var floodStartTile = null;
 
+    my.Ship = null;
     my.ShipTile = null;
 
     var floodFill = function (x, y, oldVal, newVal) {
@@ -210,7 +211,7 @@ NuhMapHandler.Builder = (function (my, parent) {
                     && right.index == 0 && bottomRight.index == 0 && bottom.index == 0 && bottomLeft.index == 0
                     && !placeFound) {
                     placeFound = true;
-                    my.Player = new Ship(game.game, currTile.worldX + currTile.width / 2, currTile.worldY + currTile.height / 2, layer);
+                    my.Ship = new Ship(game.game, currTile.worldX + currTile.width / 2, currTile.worldY + currTile.height / 2, layer);
                     my.ShipTile = currTile;
                     map.putTile(12, i - 1, j);
                     map.putTile(12, i - 1, j + 1);

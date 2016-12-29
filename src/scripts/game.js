@@ -28,8 +28,8 @@ DGame.Game.prototype = {
     create: function () {
 
         MapHandler.Init({
-            width: 64,
-            height: 48,
+            width: 100,
+            height: 100,
             chanceToStartAlive: 0.4,
             birthLimit: 4,
             deathLimit: 3,
@@ -44,43 +44,16 @@ DGame.Game.prototype = {
         //NuhMapHandler.Mobiles.CreateAnimals();
         NuhMapHandler.Mobiles.CreatePlayer();
         //NuhMapHandler.Builder.InitFlood();
-        //NuhMapHandler.Builder.StartFlood();
-
-        fovMap = NuhMapHandler.Map();
-
+        //NuhMapHandler.Builder.StartFlood();        
 
         this.physics.startSystem(Phaser.Physics.ARCADE);
-
-
-
-        //var emitter = this.game.add.emitter(this.game.world.centerX, -450, 400);
-
-        // emitter.width = this.game.world.width;
-        // emitter.angle = 30; // uncomment to set an angle for the rain.
-
-        // emitter.makeParticles('rain');
-
-        // emitter.minParticleScale = 0.05;
-        // emitter.maxParticleScale = 0.25;
-
-        // emitter.setYSpeed(300, 600);
-        // emitter.setXSpeed(-5, 5);
-        // //emitter.lifespan = 500;
-
-        // emitter.minRotation = 0;
-        // emitter.maxRotation = 0;
-
-        // emitter.start(false, 1600, 5, 0);
-
-
     },
 
     update: function () {
         //Just for debugging to start flood
         if (this.input.activePointer.isDown) {
             if (this.time.now > nextClick) {
-                nextClick = this.time.now + clickRate;
-                //this.hede();
+                nextClick = this.time.now + clickRate;                
             }
         }
 

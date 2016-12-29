@@ -13,7 +13,7 @@ var MapHandler = (function (my) {
         },
         worldConfig: {
             openCellId: 0,
-            
+
             fillMapId: 1,
             floodFillId: 2
         },
@@ -47,7 +47,7 @@ var MapHandler = (function (my) {
             }
         }
         return map;
-    };    
+    };
 
     var countAliveNeighbours = function (map, x, y) {
         var count = 0;
@@ -121,7 +121,7 @@ var MapHandler = (function (my) {
 
         return world;
     };
-    
+
 
     var getSENeighbour = function (map, x, y) {
 
@@ -155,7 +155,7 @@ var MapHandler = (function (my) {
     var getSNeighbour = function (map, x, y) {
         return map[x][y + 1];
     };
-    
+
     var logMap = function () {
         var logString = "";
         for (var y = 0; y < secureSelf.configurations.height; y++) {
@@ -224,7 +224,7 @@ var MapHandler = (function (my) {
             }
         }
 
-        
+
 
         //random map is generated
         //now trying to shutdown closed areas            
@@ -295,7 +295,7 @@ var MapHandler = (function (my) {
             }
             tryCount++;
         }
-        if (tryCount >= maxTryCount) {            
+        if (tryCount >= maxTryCount) {
             console.log("yemedi");
         };
         //logMap();
@@ -323,7 +323,7 @@ var MapHandler = (function (my) {
         return csvData;
     };
 
-    my.CountAliveNeighbours = function (map, x, y,aliveCellIndexArray) {
+    my.CountAliveNeighbours = function (map, x, y, aliveCellIndexArray) {
         var count = 0;
         for (var i = -1; i < 2; i++) {
             for (var j = -1; j < 2; j++) {
@@ -335,7 +335,7 @@ var MapHandler = (function (my) {
                     nb_x >= map.length ||
                     nb_y >= map[0].length) {
                     count = count + 1;
-                } else if (aliveCellIndexArray.indexOf(map[nb_x][nb_y]) !=-1) {
+                } else if (aliveCellIndexArray.indexOf(map[nb_x][nb_y]) != -1) {
                     count = count + 1;
                 }
             }
